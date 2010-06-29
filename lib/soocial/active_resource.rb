@@ -1,6 +1,3 @@
-# bad!
-# gem 'oauth', '>= 0.3.6'
-# gem 'oauth-active-resource'
 require 'oauth'
 require 'active_resource'
 require 'oauth_active_resource'

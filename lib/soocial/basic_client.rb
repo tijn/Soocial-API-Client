@@ -47,6 +47,9 @@ module Soocial
   #   class AwesomeApp < Soocial::BasicApp
   #     ...
   class BasicApp < OauthConsumerApp
+
+    # Perform a HTTP GET using the access token.
+    # This automatically parses a JSON response if the url ends with .json
     def get(url)
       response = access_token.get(url)
       if url =~ /.json$/
@@ -56,6 +59,8 @@ module Soocial
       end
     end
 
+    # Perform a HTTP POST using the access token.
+    # This automatically parses a JSON response if the url ends with .json
     def post(url, body = '', headers = {})
       response = access_token.post(url, body, headers)
       if url =~ /.json$/
@@ -65,6 +70,8 @@ module Soocial
       end
     end
 
+    # Perform a HTTP DELETE using the access token.
+    # This automatically parses a JSON response if the url ends with .json
     def delete(url)
       response = access_token.delete(url)
       if url =~ /.json$/
@@ -74,6 +81,8 @@ module Soocial
       end
     end
 
+    # Perform a HTTP PUT using the access token.
+    # This automatically parses a JSON response if the url ends with .json
     def put(url)
       response = access_token.put(url)
       if url =~ /.json$/
